@@ -1,36 +1,40 @@
-# analysis-everpeak
-En este proyecto analizo datos relacionados con la movilidad y su impacto económico. Utilizo Python y técnicas de análisis de datos para explorar patrones, identificar tendencias y extraer insights que ayudan a comprender mejor el comportamiento del mercado y los usuarios.
- # EverPeak Retail Analysis – Sprint 6
+# Movilidad urbana y economía | Análisis exploratorio (2024)
 
-Este repositorio contiene el análisis realizado durante el Sprint 6 del caso EverPeak–SilverBasket.
+**Proyecto académico de Data Analytics (TripleTen)** · Python, pandas y Matplotlib
 
-El dataset `everpeak_retail` incluye 2,000 órdenes de clientes con valores faltantes, sentinels, outliers y problemas de calidad diseñados para simular datos reales del retail. :contentReference[oaicite:2]{index=2}
+## Objetivo
+Explorar la relación entre la congestión del tráfico urbano y los indicadores económicos de distintas ciudades. El análisis contrasta medidas de movilidad con PIB per cápita y otros indicadores para estudiar patrones; **no establece causalidad**.
 
-## 📂 Contenido del repositorio
+## Datos
+- `tomtom_traffic.csv`: indicadores de congestión y tiempos de desplazamiento.
+- `oecd_city_economy.csv`: indicadores económicos por ciudad y año.
 
-- `notebooks/everpeak_analysis.ipynb`
-  → Notebook principal con limpieza, EDA, distribuciones, outliers y conclusiones.
+Los datos se cargan desde rutas `/datasets/` del entorno académico y **no están incluidos** en este repositorio. Para reproducir el análisis se necesitan los CSV originales o actualizar las rutas.
 
-## ▶ Cómo abrir el notebook en Google Colab
+## Metodología
+1. Importación y revisión de tipos de datos, valores faltantes y formatos.
+2. Filtrado de observaciones del año 2024.
+3. Agregación de indicadores de tráfico por ciudad, país y año con `groupby`.
+4. Combinación de tráfico y economía por ciudad y año mediante un `merge` de las fuentes.
+5. Visualizaciones exploratorias de distribuciones, congestión e indicadores económicos con pandas/Matplotlib.
+6. Preparación de una exportación CSV limpia para análisis posterior.
 
-Haz clic en el siguiente botón:
+## Hallazgos exploratorios
+- En la muestra del ejercicio, el análisis identifica **Abu Dhabi** como ciudad con el mayor retraso promedio de tráfico.
+- Al observar el PIB per cápita frente a congestión, no se encuentra una relación creciente uniforme: algunas ciudades con PIB alto registran congestión moderada o relativamente baja.
+- Estos hallazgos son **descriptivos y limitados a los datos de la actividad**; no demuestran impacto del tráfico sobre la economía.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](URL_DEL_NOTEBOOK_EN_GITHUB)
+## Evidencia técnica
+**[Abrir notebook original con código, visualizaciones y comentarios](S5%20ladb_mobility_economy_project_student-2.ipynb)**
 
-O:
+[Ver notebook en GitHub](https://github.com/martinatn95-wq/analysis-everpeak/blob/main/S5%20ladb_mobility_economy_project_student-2.ipynb)
 
-1. Abre el archivo `.ipynb` en GitHub
-2. Haz clic en **Open in Colab**
+## Ejecución
+1. Abre el notebook en Jupyter o Google Colab.
+2. Instala las dependencias necesarias: `pandas`, `numpy`, `matplotlib` y `seaborn` si se utilizan en las celdas.
+3. Proporciona los CSV de origen, ajusta sus rutas y ejecuta las celdas en orden.
 
-## 📘 Cómo reproducir el análisis
+**Limitaciones:** sin los CSV originales no se ha verificado una ejecución íntegra fuera del entorno del curso. El notebook incluye instrucciones y respuestas de práctica; algunas secciones de resumen ejecutivo permanecen como plantilla.
 
-1. Abre `notebooks/everpeak_analysis.ipynb`
-2. Ejecuta las celdas en orden
-3. El notebook carga automáticamente el dataset desde `/data/` o desde un enlace público (según corresponda)
-
-## 🧠 Objetivo del análisis
-
-- Identificar problemas de calidad de datos
-- Construir un pipeline de limpieza reproducible
-- Analizar comportamientos, distribuciones y outliers
-- Generar insights para el equipo de Estrategia e Integración de EverPeak
+## Autor
+Martín Alejandro Toledo Nieto · [Perfil GitHub](https://github.com/martinatn95-wq) · [LinkedIn](https://www.linkedin.com/in/martin-toledo-da-cpt/)
